@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private int health = 10;
-    private int coins;
+    public int health = 10;
+    public int maxHealth = 10;
+    public int coins;
     public GameObject fireballPrefab;
     public Transform attackPoint;
     public AudioSource audioSource;
@@ -24,13 +25,13 @@ public class Player : MonoBehaviour
         {
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(sceneIndex);
-            print("Р—РґРѕСЂРѕРІСЊРµ РёРіСЂРѕРєР°: " + health);
+            print("Здоровье игрока: " + health);
         }
     }
     public void CollectCoins()
     {
         coins++;
-        print("РЎРѕР±СЂР°РЅРЅС‹Рµ РјРѕРЅРµС‚РєРё: " + coins);
+        print("Собранные монетки: " + coins);
     }
     void Update()
     {
